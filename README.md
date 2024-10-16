@@ -1,3 +1,55 @@
+# Limit Wallet - Bitcoin Limit Order Wallet
+
+## Motivation
+The primary goal of Limit Wallet is to increase the liquidity of Bitcoin. Bitcoin is a deflationary asset, and many users tend to HODL (hold) it as a store of value. This wallet introduces the concept of **"time"** as added value, providing a mechanism that incentivizes users to engage in transactions (value exchange).
+
+Specifically, buyers "purchase" **time** by setting a target Bitcoin rate, waiting until the price reaches that rate. Once the target rate is achieved, the transaction is automatically executed. This enables Bitcoin holders to exchange value at the right moment, improving Bitcoin's liquidity.
+
+Additionally, sellers benefit from the possibility that the value of Bitcoin will increase before the transaction is finalized. While they "lose time," they may gain **increased value** by receiving Bitcoin that has appreciated during the waiting period. This system creates an incentive to not just HODL Bitcoin, but to use it more efficiently in transactions.
+
+## Overview
+Limit Wallet syncs with the Bitcoin Testnet network, allowing users to check their Bitcoin balance, create, sign, and broadcast transactions. The wallet is built using Tauri, BDK (Bitcoin Dev Kit), and Svelte.
+
+## Features
+- **Sync with the Bitcoin Testnet**: Connect and sync your wallet with the Testnet to check balances and update in real time.
+- **Create and sign PSBT (Partially Signed Bitcoin Transactions)**: Support for creating, signing, saving, and broadcasting PSBT transactions.
+- **Fetch Bitcoin price**: Retrieve the current Bitcoin price from an API every minute.
+- **Automatic wallet synchronization**: The front end is automatically notified when the balance changes.
+
+## Key Functions
+1. **Wallet creation and initialization**: The wallet is created by obtaining a mnemonic from environment variables and generating an extended private key (XPRV).
+
+2. **Sync with the Testnet**: Sync the wallet with the Testnet using an Electrum server. The synchronization runs in the background, and the front end is notified when it completes.
+
+3. **Fetch Bitcoin price**: The current Bitcoin price is fetched every minute via an API and displayed to the user.
+
+4. **Transaction creation and broadcast**: Specify the amount to send, create a transaction, and save it as a PSBT for later signing and broadcasting.
+
+## Usage
+### 1. Wallet Initialization
+When the Tauri application is launched, the wallet is initialized using a mnemonic stored in environment variables.
+
+### 2. Sync with the Testnet
+The wallet syncs with the Testnet in the background. Once the synchronization is complete, a message saying "Connected!" will be displayed.
+
+### 3. Fetch Bitcoin Price
+The Bitcoin price is automatically updated every minute and displayed on the wallet interface.
+
+### 4. Create a Transaction
+Enter the amount to send and the target rate to create a transaction. The transaction is saved as a PSBT and can be signed and broadcast later.
+
+### 5. Sign and Broadcast a Transaction
+The created PSBT is signed and broadcast to the Bitcoin network.
+
+## Roadmap
+1. **Add transaction cancellation feature**: Introduce a feature that allows transactions to be canceled after a set time limit, preventing transaction stagnation due to long waiting periods. This will enable more flexible transactions for both buyers and sellers.
+
+2. **Development of Discreet Log Contracts (DLC)**: Develop DLCs utilizing Bitcoin's escrow functionality, allowing goods and services to be provided in advance. This will help resolve dissatisfaction caused by transaction delays and ensure smoother execution of transactions for both buyers and sellers.
+
+
+
+
+
 # Limit Wallet - ビットコイン指値取引ウォレット
 
 ## モチベーション
