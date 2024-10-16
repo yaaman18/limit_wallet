@@ -1,3 +1,30 @@
 {
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "cSpell.words": [
+    "blockstream",
+    "dotenv",
+    "fqutr",
+    "Keychain",
+    "miniscript",
+    "nchng",
+    "psbt",
+    "pubkey",
+    "reqwest",
+    "satoshi",
+    "satoshis",
+    "secp",
+    "Segwitv",
+    "serde",
+    "txid",
+    "txout",
+    "unlisten",
+    "urun",
+    "UTXO",
+    "utxos",
+    "vout",
+    "vpub",
+    "xkey",
+    "XPRV",
+    "XPUB"
+  ]
 }
